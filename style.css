@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+body {
+  box-sizing: border-box;
+  background-color: hsl(0, 0%, 8%);
+  color: white;
+}
+
+.container {
+  background-color: hsl(0, 0%, 12%);
+}
+
+img {
+  border-radius: 100%;
+}
+
+.profile h1 {
+  font: 700 24px Inter, serif;
+}
+.profile h2 {
+  font: 600 16px Inter, serif;
+}
+.profile p {
+  font: 400 14px Inter, serif;
+}
+
+.links {
+  font: 600 16px Inter, serif;
+}
+.links ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: stretch;
+  justify-content: space-between;
+  padding: 0;
+}
+.links li {
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 10px;
+  padding: 5vw 10%;
+}
+.links a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
