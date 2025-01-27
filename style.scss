@@ -12,66 +12,100 @@ $grey-900: hsl(0, 0%, 8%);
 //  400, 600, 700
 
 @mixin inter-bold {
-  font: 700 24px Inter, serif;
+  font: 700 20px Inter, serif;
 }
 
 @mixin inter-semibold {
-  font: 600 16px Inter, serif;
+  font: 600 12px Inter, serif;
 }
 
 @mixin inter-regular {
-  font: 400 14px Inter, serif;
+  font: 400 12px Inter, serif;
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
+  margin: 10vh 0;
+  height: 80vh;
   background-color: $grey-900;
   color: white;
 }
 
 .container {
+  display: grid;
+  grid-template-columns: [coloumn-start] 1fr;
+  grid-template-rows: [row-header] 1fr [row-main] 1fr [row-footer] 2fr;
+  grid-template-areas:
+  "avatar"
+  "profile"
+  "links";
   background-color: $grey-800;
+  border-radius: 10px;
+  padding: 0 20px;
+  width: 250px;
+
 }
 
-img {
-  border-radius: 100%;
+.avatar {
+  grid-area: avatar;
+  place-self: center;
+  text-align: center;
+  margin-top: 2vh;
+
+  img {
+    border-radius: 50%;
+    max-width: 50%;
+    height: auto;
+  }
 }
 
 .profile {
+  grid-area: profile;
+  place-self: center;
+  text-align: center;
+
   h1 {
     @include inter-bold;
+    margin: 1vh 0;
   }
 
   h2 {
     @include inter-semibold;
+    margin: 0;
+    color: $green;
   }
 
   p {
     @include inter-regular;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
   }
 }
 
 .links {
   @include inter-semibold;
-
-  ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: stretch;
-    justify-content: space-between;
-    padding: 0;
-  }
-
-  li {
-    background-color: $grey-700;
-    border-radius: 10px;
-    padding: 5vw 10%;
-  }
+  grid-area: links;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: center;
+  justify-content: space-evenly;
+  padding: 0;
+  text-align: center;
 
   a {
+    background-color: $grey-700;
+    border-radius: 5px;
+    padding: 1.5vh 10%;
     color: $white;
     text-decoration: none;
+  }
+
+  a:hover {
+    color: $grey-800;
+    background-color: $green;
   }
 }
